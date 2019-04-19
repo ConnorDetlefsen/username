@@ -1,12 +1,17 @@
 #! /bin/bash
 # username.sh
-# author
+echo "The only character you can use to make a username are: "
+echo "lowercase letters"
+echo "digits"
+echo "and underscores"
+echo "Must start with a lowercase letter"
+echo "Username must be between 3 and 12 characters"
 echo "Enter a username: "
-read ZIP
-while echo "$ZIP" | egrep -v "^[0-9]{5}$" > /dev/null 2>&1
+read username
+while echo $username | egrep -v "^[a-z][a-z_0-9]{2,11}$" > /dev/null 2>&1
 do
-	echo "You must enter a valid Username!"
-	echo "Enter a username: "
-	read ZIP
+	echo "username needs three to twelve letters, only lowercase, underscores and numbers."
+	echo "enter username"
+	read username
 done
 echo "Thank you"
